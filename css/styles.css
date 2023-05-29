@@ -543,7 +543,8 @@ body {
   transition: transform 250ms var(--cubic);
 }
 
-.portfolio-card:hover .overlay-text {
+.portfolio-card:hover .overlay-text,
+.portfolio-card:focus .overlay-text {
   transform: translatey(0);
 }
 
@@ -683,6 +684,8 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
 
+  fill: var(--secondary-color);
+
   transition: background-color 250ms var(--cubic), border 250ms var(--cubic);
 }
 
@@ -690,15 +693,5 @@ body {
 .close:focus {
   background-color: var(--color-activ);
   border: none;
-}
-
-.close-icon {
-  fill: var(--secondary-color);
-
-  transition: fill 250ms var(--cubic);
-}
-
-.close-icon:hover,
-.close-icon:focus {
   fill: var(--main-background-color);
 }
