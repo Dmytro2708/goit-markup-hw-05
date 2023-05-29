@@ -101,7 +101,6 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   padding: 24px 0;
-
 }
 
 .text-nav:hover,
@@ -217,7 +216,7 @@ body {
   margin-right: auto;
   padding: 16px 32px;
 
-  transition: background-color 250ms var(--cubic), box-shadow 250ms var(--cubic);
+  transition: background-color 250ms var(--cubic);
 }
 
 .hero-button:hover,
@@ -464,7 +463,7 @@ body {
   cursor: pointer;
 
   transition: color 250ms var(--cubic), background-color 250ms var(--cubic),
-    box-shadow 250ms var(--cubic), border 250ms var(--cubic);
+    border-color 250ms var(--cubic), box-shadow 250ms var(--cubic);
 }
 
 .filter-button:hover,
@@ -526,33 +525,26 @@ body {
   overflow: hidden;
 }
 
-.overlay {
+.overlay-text {
   position: absolute;
+  top: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding: 40px 32px;
+  color: var(--secondary-background-color);
+  background-color: var(--color-brand);
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
 
-  background-color: var(--color-brand);
   transform: translatey(100%);
 
   transition: transform 250ms var(--cubic);
 }
 
-.portfolio-card:hover .overlay {
+.portfolio-card:hover .overlay-text {
   transform: translatey(0);
-}
-
-.overlay-text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-
-  letter-spacing: 0.02em;
-
-  color: var(--secondary-background-color);
-
-  padding: 40px 32px 0 32px;
 }
 
 /* ------------------------------------------------------------------------------------ */
@@ -641,8 +633,6 @@ body {
   margin-right: 120px;
 }
 
-
-
 /* -----------modal----------------- */
 
 .backdrop {
@@ -652,17 +642,20 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(46, 47, 66, 0.4);
+
+  transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .modal {
   position: absolute;
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -671,18 +664,41 @@ body {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transition: transform 250ms var(--cubic);
 }
 
 .close {
   position: absolute;
   top: 24px;
   right: 24px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   background: var(--color-border);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+
+  transition: background-color 250ms var(--cubic), border 250ms var(--cubic);
+}
+
+.close:hover,
+.close:focus {
+  background-color: var(--color-activ);
+  border: none;
 }
 
 .close-icon {
   fill: var(--secondary-color);
+
+  transition: fill 250ms var(--cubic);
+}
+
+.close-icon:hover,
+.close-icon:focus {
+  fill: var(--main-background-color);
 }
