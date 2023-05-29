@@ -695,3 +695,9 @@ body {
   border: none;
   fill: var(--main-background-color);
 }
+
+.close-icon{
+
+ transition: fill 250ms var(--cubic);
+}
+
